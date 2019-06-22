@@ -1,8 +1,8 @@
 let todoId = 0
-export const addTodo = text => ({
+export const addTodo = newTodo => ({
   type: 'ADD_TODO',
   id: todoId++,
-  text
+  newTodo: { title: newTodo, completed: false }
 })
 
 export const toggleComplete = id => ({

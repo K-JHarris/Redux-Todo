@@ -6,15 +6,13 @@ const initialState = {
 
 function reducer(state = initialState, action){
   switch(action.type) {
+    //in this case, we use the spread operator to grab everything currently on state and append a new todo onto it
     case 'ADD_TODO':
-      return [
+      return {
         ...state,
-        {
-          id: action.id,
-          text: action.text,
-          completed: false
-        }
-      ]
+        todos: [...state.todos, action.text]
+    }
+      //in this case, we use the id of a given todo and toggle its completed property on state
     case 'TOGGLE_TODO':
       return state.map(todo =>
         (todo.id === action.id)
