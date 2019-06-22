@@ -7,11 +7,9 @@ import App from './App';
 import { createStore } from 'redux'
 import { Provider } from 'react-redux'
 
-function reducer(){
-  return {
-    debug: 'I am inside the Redux Store'
-  }
-}
+//importing our reducer
+import reducer from './reducers/reducer'
+
 const store = createStore(reducer)
 
 ReactDOM.render(<Provider store={store}><App /></Provider>, document.getElementById('root'));
